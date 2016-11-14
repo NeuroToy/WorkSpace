@@ -10,6 +10,7 @@ public class NameRus {
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
 		System.out.println ("Привет, " + name + "!");
+		scanner.close();
 
 	}
 

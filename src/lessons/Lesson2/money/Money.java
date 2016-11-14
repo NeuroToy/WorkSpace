@@ -33,7 +33,7 @@ public class Money {
 			System.out.println(i + " рублей");
 		else if (i % 10 == 0)
 			System.out.println(i + " рублей");
-		
+		number.close();
 	}
 
 }

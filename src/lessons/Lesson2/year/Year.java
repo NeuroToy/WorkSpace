@@ -13,5 +13,6 @@ public class Year {
 			System.out.println("Ваш год високосный!");
 		else
 			System.out.println("Ваш год не високосный");
+		year.close();
 	}
 }

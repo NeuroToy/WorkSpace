@@ -16,6 +16,7 @@ public class Half {
 		String secondPart = full.substring(half);
 		System.out.println("Первая часть: " + firstPart);
 		System.out.println("Вторая часть: " + secondPart);
+		imput.close();
 
 	}
 

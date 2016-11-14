@@ -21,6 +21,8 @@ public class Weight {
 		}
 		else if (weight == optimal) {
 			System.out.println("Ваш вес оптимален!");
+		value.close();
+		value2.close();
 		}
 
 	}

@@ -20,6 +20,9 @@ public class Equals {
 			System.out.println (one + " - Больше!");
 		else if (two > one)
 			System.out.println (two + " - Больше!");
+		first.close();
+		second.close();
+		
 	}
 
 }

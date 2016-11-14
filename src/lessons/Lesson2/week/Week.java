@@ -60,7 +60,10 @@ public class Week {
 				
                 break;
 				
+         
 		}
+		
+		scan.close();
 
 	}
 
