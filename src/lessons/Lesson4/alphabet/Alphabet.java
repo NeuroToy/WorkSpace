@@ -10,7 +10,7 @@ public class Alphabet {
 		for (int i = 0; i < 26; i++) {
 			alpha[i] = (char) ('a' + i);
 		}
-		System.out.println("Type tour text:");
+		System.out.println("Type your text:");
 		Scanner scan = new Scanner(System.in);
 		String text = scan.nextLine();
 		String lower = text.toLowerCase();
