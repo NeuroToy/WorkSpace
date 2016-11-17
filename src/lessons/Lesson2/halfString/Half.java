@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Half {
 
 	public static void main(String[] args) {
-		
+
 		System.out.println("Введите текст:");
 		Scanner imput = new Scanner(System.in);
 		String full = imput.nextLine();

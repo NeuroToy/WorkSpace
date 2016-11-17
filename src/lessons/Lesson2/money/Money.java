@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Money {
 
 	public static void main(String[] args) {
-		
+
 		System.out.println("Введите число от 1 до 999:");
 		Scanner number = new Scanner(System.in);
 		int i = number.nextInt();
