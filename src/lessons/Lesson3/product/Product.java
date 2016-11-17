@@ -18,5 +18,4 @@ public class Product {
 		}
 		System.out.println("\nArray sum = " + sum);
 	}
-
 }

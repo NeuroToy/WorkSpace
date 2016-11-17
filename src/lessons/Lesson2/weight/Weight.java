@@ -23,5 +23,4 @@ public class Weight {
 			value2.close();
 		}
 	}
-
 }

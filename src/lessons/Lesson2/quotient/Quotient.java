@@ -16,7 +16,5 @@ public class Quotient {
 		System.out.println("Частное от Ваших чисел: " + three);
 		first.close();
 		second.close();
-
 	}
-
 }

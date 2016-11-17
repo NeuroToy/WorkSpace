@@ -11,7 +11,5 @@ public class NameRus {
 		String name = scanner.nextLine();
 		System.out.println("Привет, " + name + "!");
 		scanner.close();
-
 	}
-
 }

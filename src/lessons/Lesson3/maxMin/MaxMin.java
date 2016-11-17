@@ -21,5 +21,4 @@ public class MaxMin {
 		System.out.println("\nmin value = " + min); // вывод
 		System.out.println("max value = " + max);
 	}
-
 }

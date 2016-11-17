@@ -22,7 +22,5 @@ public class Equals {
 			System.out.println(two + " - Больше!");
 		first.close();
 		second.close();
-
 	}
-
 }

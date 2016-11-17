@@ -17,7 +17,5 @@ public class Half {
 		System.out.println("Первая часть: " + firstPart);
 		System.out.println("Вторая часть: " + secondPart);
 		imput.close();
-
 	}
-
 }

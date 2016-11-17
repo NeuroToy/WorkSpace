@@ -18,8 +18,6 @@ public class ArrayIndex {
 			}
 			System.out.print(" " + myArray[i]);
 		}
-
 		System.out.println("\nYour's min value = " + min + "\nIndex of array = " + indexOfArray);
-
 	}
 }

@@ -35,5 +35,4 @@ public class Money {
 			System.out.println(i + " рублей");
 		number.close();
 	}
-
 }

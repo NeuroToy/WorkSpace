@@ -9,11 +9,8 @@ public class NewArray {
 		for (int i = 0; i < newArray.length; i++) {
 			System.out.print(" " + newArray[i] + " " + "|");
 			value = value + newArray[i]; // сумма
-
 		}
-
 		System.out.println("\n" + "averrage value = " + value / newArray.length); // ср.
 																					// арифметическое
 	}
-
 }

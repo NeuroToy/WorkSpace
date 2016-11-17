@@ -46,5 +46,4 @@ public class Week {
 		}
 		scan.close();
 	}
-
 }
