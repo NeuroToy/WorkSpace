@@ -16,13 +16,13 @@ public class Alphabet {
 		String lower = text.toLowerCase();
 		char[] array = lower.toCharArray();
 		for (int i = 0; i <= array.length - 1; i++) {
-			System.out.print(" " + " " + array[i]);
+			System.out.printf("%4s" ,array[i]);
 		}
 		System.out.println();
 		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < alpha.length; j++) {
 				if (array[i] == alpha[j]) {
-					System.out.print(" " + " " + (j + 1));
+					System.out.printf("%4d" ,(j + 1));
 				}
 			}
 		}
