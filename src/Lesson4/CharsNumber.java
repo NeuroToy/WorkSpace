@@ -14,15 +14,14 @@ public class CharsNumber {
 		int count = 0;
 		for (int j = 0; j < text.length(); j++) {
 			for (int i = text.length() - 1; i > j; i--) {
-				if (text.charAt(j) == text.charAt(i)){
+				if (text.charAt(j) == text.charAt(i)) {
 					count = count + 1;
 				}
 			}
 		}
 		if (count < 1) {
 			System.out.println("Symbols are unique");
-		}
-		else {
+		} else {
 			System.out.println("Symbols are not unique");
 		}
 		scan.close();
