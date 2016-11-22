@@ -1,5 +1,11 @@
 package Lesson2;
 
+/**
+ * Делит 2 числа
+ * первое на второе
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Quotient {

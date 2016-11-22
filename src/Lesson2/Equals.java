@@ -1,5 +1,11 @@
 package Lesson2;
 
+/**
+ * Сравнивает 2 числа на равность
+ * результат выводит
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Equals {

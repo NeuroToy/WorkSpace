@@ -1,5 +1,10 @@
 package Lesson2;
 
+/**
+ * Делит текст на 2 части
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Half {

@@ -1,5 +1,10 @@
 package Lesson2;
 
+/**
+ * Вычисляет высокостный ли вводимый год
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Year {

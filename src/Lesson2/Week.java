@@ -1,5 +1,10 @@
 package Lesson2;
 
+/**
+ * При вводе числа выводит соответствующий день недели
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Week {

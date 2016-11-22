@@ -1,5 +1,10 @@
 package Lesson2;
 
+/**
+ * Рассчитывает оптимальный вес
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Weight {

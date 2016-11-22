@@ -1,5 +1,11 @@
 package Lesson2;
 
+/**
+ * При вооде чистла от 1 до 999
+ * преобразует в денежный эквивалент
+ * @author malevich
+ * @version 1.0
+ */
 import java.util.Scanner;
 
 public class Money {
