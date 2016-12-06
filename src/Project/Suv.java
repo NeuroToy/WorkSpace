@@ -1,6 +1,6 @@
 package Project;
 
-public class Suv extends TaxiPark {
+public class Suv extends Car {
 
 	int maxCapacity;
 

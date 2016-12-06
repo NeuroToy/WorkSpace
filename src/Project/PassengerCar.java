@@ -1,6 +1,6 @@
 package Project;
 
-public class PassengerCar extends TaxiPark {
+public class PassengerCar extends Car {
 
 	double engine;
 
