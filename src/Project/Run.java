@@ -19,6 +19,7 @@ class Run {
 
 		Scanner scan = new Scanner(System.in);
 		Scanner secondScan = new Scanner(System.in);
+		
 		boolean x = true;
 		try {
 			while (x) {
@@ -38,15 +39,21 @@ class Run {
 					break;
 				case 2:
 					System.out.println("\n" + "1. Test");
-					System.out.println("2. Test" + "\n");
+					System.out.println("2. Test");
+					System.out.println("3. Exit" + "\n");
 					int secondNum = secondScan.nextInt();
 					switch (secondNum) {
 					case 1:
-						System.out.println("\n" + "2. Test1.1");
+						System.out.println("\n" + "Test1.1" + "\n");
 						break;
 					case 2:
-						System.out.println("\n" + "2. Test1.2" + "\n");
+						System.out.println("\n" + "Test1.2" + "\n");
 						break;
+					case 3:
+						if (secondNum == 3) {
+							x = false;
+							System.exit(num);
+						}
 					}
 					break;
 				default:
@@ -56,6 +63,7 @@ class Run {
 					}
 					System.out.println("\n" + "Press 1-3" + "\n");
 				}
+				
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("\n" + "Not a number" + "\n");
