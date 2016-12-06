@@ -11,6 +11,9 @@ class Run {
 		taxiPark.add(new Minibus("Mercedes V-250", 60600, 6.0, 9.1, 5, true));
 		taxiPark.add(new Minivan("Dodge Grand Caravan", 24590, 12.4, 10.8, 7, true));
 		taxiPark.add(new Pickup("Volkswagen Amarok", 25000, 7.9, 11.1, 4, 189));
+		taxiPark.add(new Cabrio("Volkswagen Amarok", 25000, 7.9, 11.1, 4, "Leather"));
+		taxiPark.add(new Sedan("Volkswagen Amarok", 25000, 7.9, 11.1, 4, "Quattro"));
+		taxiPark.add(new Touring("Volkswagen Amarok", 25000, 7.9, 11.1, 4, "Tip-Tronic"));
 		for (TaxiPark c : taxiPark) {
 			System.out.print(c + "\n\n");
 		}
