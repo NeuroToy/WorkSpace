@@ -10,7 +10,6 @@ public class PassengerCar extends TaxiPark {
 	}
 
 	public String toString() {
-		return carName + "\nFuel consumption: " + fuelConsumption + "\nAcceleration: " + acceleration + "\nCar price: "
-				+ price + "$" + "\nEngine: " + engine;
+		return super.toString() + "\nEngine: " + engine;
 	}
 }

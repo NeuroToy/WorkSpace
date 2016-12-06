@@ -14,6 +14,5 @@ class Run {
 		for (TaxiPark c : taxiPark) {
 			System.out.print(c + "\n\n");
 		}
-		Iterator<TaxiPark> it = taxiPark.iterator();
 	}
 }

@@ -11,7 +11,6 @@ public class Minivan extends Suv {
 	
 	@Override
 	public String toString() {
-		return carName + "\nFuel consumption: " + fuelConsumption + "\nAcceleration: " + acceleration + "\nCar price: "
-				+ price + "$" + "\nMax passengers: " + maxCapacity + "\nBaby chair: " + babyChair;
+		return super.toString() + "\nBaby chair: " + babyChair;
 	}
 }

@@ -11,7 +11,6 @@ public class Pickup extends Suv {
 
 	@Override
 	public String toString() {
-		return carName + "\nFuel consumption: " + fuelConsumption + "\nAcceleration: " + acceleration + "\nCar price: "
-				+ price + "$" + "\nMax passengers: " + maxCapacity + "\nBody capacity: " + bodyCapacity + "litres";
+		return super.toString() + "\nBody capacity: " + bodyCapacity + "litres";
 	}
 }
