@@ -11,6 +11,6 @@ public class Cabrio extends PassengerCar {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Salon's trim: " + trim;
+		return super.toString() + "\nSalon trim: " + trim;
 	}
 }

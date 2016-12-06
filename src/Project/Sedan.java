@@ -11,6 +11,6 @@ public class Sedan extends PassengerCar {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Type of transmission: " + typeOfTransmission;
+		return super.toString() + "\nType of transmission: " + typeOfTransmission;
 	}
 }
