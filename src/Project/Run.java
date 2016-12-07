@@ -74,7 +74,6 @@ class Run {
 							if (element.acceleration >= firstRange && element.acceleration <= secondRange) {
 								System.out.println("\n" + element + "\n");
 							}
-
 						}
 					}
 					if (secondNum == 4) {
@@ -83,12 +82,12 @@ class Run {
 						System.exit(num);
 					}
 					break;
+				case 3:
+					inspection = false;
+					System.out.println("\nProgramm closed.");
+					System.exit(num);
+					break;
 				default:
-					if (num == 3) {
-						inspection = false;
-						System.out.println("\nProgramm closed.");
-						System.exit(num);
-					}
 					System.out.println("\n" + "Press 1-3" + "\n");
 				}
 			}
