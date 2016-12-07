@@ -92,7 +92,7 @@ class Run {
 					System.exit(num);
 					break;
 				default:
-					System.out.println("\n" + "Press 1-3" + "\n");
+					System.out.println("\n" + "Haven't got variants, please try again" + "\n");
 				}
 			}
 		} catch (InputMismatchException e) {
