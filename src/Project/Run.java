@@ -23,6 +23,7 @@ class Run {
 		Scanner thirdScan = new Scanner(System.in);
 		Scanner fourthScan = new Scanner(System.in);
 		boolean inspection = true;
+		Car each;
 
 		try {
 			while (inspection) {
@@ -47,7 +48,7 @@ class Run {
 						Iterator<Car> itr = taxiPark.iterator();
 						int costOfPark = 0;
 						while (itr.hasNext()) {
-							Car each = itr.next();
+							each = itr.next();
 							costOfPark += each.price;
 						}
 						System.out.println("\n" + costOfPark + "$" + "\n");
@@ -60,7 +61,7 @@ class Run {
 						});
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
-							Car each = itr.next();
+							each = itr.next();
 							System.out.println("\n" + each + "\n");
 						}
 					}
@@ -70,9 +71,9 @@ class Run {
 						double secondRange = fourthScan.nextDouble();
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
-							Car element = itr.next();
-							if (element.acceleration >= firstRange && element.acceleration <= secondRange) {
-								System.out.println("\n" + element + "\n");
+							each = itr.next();
+							if (each.acceleration >= firstRange && each.acceleration <= secondRange) {
+								System.out.println("\n" + each.carName + "\nAcceleration: " + each.acceleration + "\n");
 							}
 						}
 					}
