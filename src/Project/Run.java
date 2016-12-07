@@ -81,6 +81,9 @@ class Run {
 						System.out.println("\nProgramm closed.");
 						System.exit(num);
 					}
+					if (secondNum > 4) {
+						System.out.println("\nHaven't got variants, please try again\n");
+					}
 					break;
 				case 3:
 					inspection = false;
@@ -92,7 +95,7 @@ class Run {
 				}
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("\n" + "Not a number");
+			System.out.println("\n" + "Error - not a number!");
 		}
 		scan.close();
 		secondScan.close();
