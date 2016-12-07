@@ -4,7 +4,7 @@ public class Minibus extends Suv {
 	
 	boolean tv;
 
-	public Minibus(String a, int b, double c, double d, int e, boolean f) {
+	public Minibus(String a, int b, double c, Double d, int e, boolean f) {
 		super(a, b, c, d, e);
 		tv = f;
 	}

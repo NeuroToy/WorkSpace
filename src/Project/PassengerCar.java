@@ -4,7 +4,7 @@ public class PassengerCar extends Car {
 
 	double engine;
 
-	public PassengerCar(String a, int b, double c, double d, double e) {
+	public PassengerCar(String a, int b, double c, Double d, double e) {
 		super(a, b, c, d);
 		engine = e;
 	}

@@ -4,7 +4,7 @@ public class Suv extends Car {
 
 	int maxCapacity;
 
-	public Suv(String a, int b, double c, double d, int e) {
+	public Suv(String a, int b, double c, Double d, int e) {
 		super(a, b, c, d);
 		maxCapacity = e;
 	}

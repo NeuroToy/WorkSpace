@@ -1,6 +1,8 @@
 package Project;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -10,54 +12,81 @@ class Run {
 	public static void main(String[] args) {
 
 		ArrayList<Car> taxiPark = new ArrayList<Car>();
-		taxiPark.add(new Minibus("Mercedes V-250", 60600, 6.0, 9.1, 5, true));
-		taxiPark.add(new Minivan("Dodge Grand Caravan", 24590, 12.4, 10.8, 7, true));
-		taxiPark.add(new Pickup("Volkswagen Amarok", 25000, 7.9, 11.1, 4, 189));
-		taxiPark.add(new Cabrio("Mercedes E400", 63800, 9.4, 5.2, 3.0, "Leather"));
-		taxiPark.add(new Sedan("Audi A8 4.0 TFSI", 105060, 9.1, 4.5, 4.0, "Quattro"));
-		taxiPark.add(new Touring("BMW 550i GT", 112500, 9.6, 4.8, 4.4, "Tip-Tronic"));
+		taxiPark.add(new Minibus("Mercedes V-250", 60600, 9.1, 6.0, 5, true));
+		taxiPark.add(new Minivan("Dodge Grand Caravan", 24590, 10.8, 12.4, 7, true));
+		taxiPark.add(new Pickup("Volkswagen Amarok", 25000, 11.1, 7.9, 4, 189));
+		taxiPark.add(new Cabrio("Mercedes E400", 63800, 5.2, 9.4, 3.0, "Leather"));
+		taxiPark.add(new Sedan("Audi A8 4.0 TFSI", 105060, 4.5, 9.1, 4.0, "Quattro"));
+		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4, "Tip-Tronic"));
 		Scanner scan = new Scanner(System.in);
 		Scanner secondScan = new Scanner(System.in);
-		boolean x = true;
+		Scanner thirdScan = new Scanner(System.in);
+		Scanner fourthScan = new Scanner(System.in);
+		boolean inspection = true;
 
 		try {
-			while (x) {
-				System.out.println("1. Show the value of all park's cars:");
-				System.out.println("2. Show park's cars according to information:");
+			while (inspection) {
+				System.out.println("1. Show all park's cars:");
+				System.out.println("2. Operations:");
 				System.out.println("3. Exit" + "\n");
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
-					Iterator<Car> iterator = taxiPark.iterator();
-					int costOfPark = 0;
-					while (iterator.hasNext()) {
-						Car each = iterator.next();
-						costOfPark += each.price;
+					for (Car x : taxiPark) {
+						System.out.print("\n" + x + "\n");
 					}
-					System.out.println("\n" + costOfPark + "$" + "\n");
+					System.out.println("\n");
 					break;
 				case 2:
-					System.out.println("\n" + "1. Test");
-					System.out.println("2. Test");
-					System.out.println("3. Exit" + "\n");
+					System.out.println("\n" + "1. Show the total cost of cars:");
+					System.out.println("2. Sort by fuel consumption:");
+					System.out.println("3. Find car by acceleration range:");
+					System.out.println("4. Exit" + "\n");
 					int secondNum = secondScan.nextInt();
-					switch (secondNum) {
-					case 1:
-						System.out.println("\n" + "Test1.1" + "\n");
-						break;
-					case 2:
-						System.out.println("\n" + "Test1.2" + "\n");
-						break;
-					case 3:
-						if (secondNum == 3) {
-							x = false;
-							System.exit(num);
+					if (secondNum == 1) {
+						Iterator<Car> itr = taxiPark.iterator();
+						int costOfPark = 0;
+						while (itr.hasNext()) {
+							Car each = itr.next();
+							costOfPark += each.price;
 						}
+						System.out.println("\n" + costOfPark + "$" + "\n");
+					}
+					if (secondNum == 2) {
+						Collections.sort(taxiPark, new Comparator<Car>() {
+							public int compare(Car a, Car b) {
+								return a.getFuelConsumption().compareTo(b.getFuelConsumption());
+							}
+						});
+						Iterator<Car> itr = taxiPark.iterator();
+						while (itr.hasNext()) {
+							Car each = itr.next();
+							System.out.println("\n" + each + "\n");
+						}
+					}
+					if (secondNum == 3) {
+						System.out.print("\n" + "Enter range:" + "\n\n");
+						double firstRange = thirdScan.nextDouble();
+						double secondRange = fourthScan.nextDouble();
+						Iterator<Car> itr = taxiPark.iterator();
+						while (itr.hasNext()) {
+							Car element = itr.next();
+							if (element.acceleration >= firstRange && element.acceleration <= secondRange) {
+								System.out.println("\n" + element + "\n");
+							}
+
+						}
+					}
+					if (secondNum == 4) {
+						inspection = false;
+						System.out.println("\nProgramm closed.");
+						System.exit(num);
 					}
 					break;
 				default:
 					if (num == 3) {
-						x = false;
+						inspection = false;
+						System.out.println("\nProgramm closed.");
 						System.exit(num);
 					}
 					System.out.println("\n" + "Press 1-3" + "\n");
@@ -68,5 +97,7 @@ class Run {
 		}
 		scan.close();
 		secondScan.close();
+		thirdScan.close();
+		fourthScan.close();
 	}
 }

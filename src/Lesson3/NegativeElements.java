@@ -16,4 +16,5 @@ public class NegativeElements {
 		}
 		System.out.print("\nThe number of negative elements: " + sum);
 	}
+	
 }

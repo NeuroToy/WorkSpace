@@ -4,7 +4,7 @@ public class Pickup extends Suv {
 
 	double bodyCapacity;
 
-	public Pickup(String a, int b, double c, double d, int e, double f) {
+	public Pickup(String a, int b, double c, Double d, int e, double f) {
 		super(a, b, c, d, e);
 		bodyCapacity = f;
 	}
