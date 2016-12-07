@@ -20,7 +20,7 @@ class Run {
 		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4, "Tip-Tronic"));
 		boolean inspection = true;
 		Car each;
-		Iterator<Car> itr;
+		Iterator<Car> itr; 
 
 		try (Scanner scan = new Scanner(System.in);
 				Scanner secondScan = new Scanner(System.in);
