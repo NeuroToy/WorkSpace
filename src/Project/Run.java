@@ -23,8 +23,7 @@ class Run {
 		taxiPark.add(new Sedan("Audi A8 4.0 TFSI", 105060, 4.5, 9.1, 4.0, "Quattro"));
 		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4, "Tip-Tronic"));
 		boolean inspection = true;
-		Car each;
-		Iterator<Car> itr;
+		Car each = null;
 		String str = taxiPark.toString();
 
 		try (Scanner scan = new Scanner(System.in);
@@ -52,7 +51,7 @@ class Run {
 					System.out.println("6. Exit" + "\n");
 					int secondNum = secondScan.nextInt();
 					if (secondNum == 1) {
-						itr = taxiPark.iterator();
+						Iterator<Car> itr = taxiPark.iterator();
 						int costOfPark = 0;
 						while (itr.hasNext()) {
 							each = itr.next();
@@ -66,7 +65,7 @@ class Run {
 								return a.getFuelConsumption().compareTo(b.getFuelConsumption());
 							}
 						});
-						itr = taxiPark.iterator();
+						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
 							System.out.println(
@@ -77,12 +76,15 @@ class Run {
 						System.out.print("\n" + "Enter range:" + "\n\n");
 						double firstRange = thirdScan.nextDouble();
 						double secondRange = fourthScan.nextDouble();
-						itr = taxiPark.iterator();
+						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
 							if (each.acceleration >= firstRange && each.acceleration <= secondRange) {
 								System.out.println("\n" + each.carName + "\nAcceleration: " + each.acceleration + "\n");
 							}
+						}
+						if (each.acceleration < firstRange || each.acceleration > secondRange) {
+							System.out.println("\n" + "We haven't got cars for you" + "\n");
 						}
 					}
 					if (secondNum == 4) {
@@ -112,7 +114,6 @@ class Run {
 					if (secondNum == 6) {
 						inspection = false;
 						System.out.println("\nProgramm closed.");
-						System.exit(num);
 					}
 					if (secondNum > 6) {
 						System.out.println("\nHaven't got variants, please try again\n");
@@ -121,15 +122,13 @@ class Run {
 				case 3:
 					inspection = false;
 					System.out.println("\nProgramm closed.");
-					System.exit(num);
 					break;
 				default:
-					System.out.println("\n" + "Haven't got variants, please try again" + "\n");
+					System.out.println("\n" + "We haven't got variants, please try again" + "\n");
 				}
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("\n" + "Error - not a number!");
-		} finally {
-		}
+		} 
 	}
 }
