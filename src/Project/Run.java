@@ -24,7 +24,6 @@ class Run {
 		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4, "Tip-Tronic"));
 		boolean inspection = true;
 		Car each = null;
-		String str = taxiPark.toString();
 
 		try (Scanner scan = new Scanner(System.in);
 				Scanner secondScan = new Scanner(System.in);
@@ -83,17 +82,17 @@ class Run {
 								System.out.println("\n" + each.carName + "\nAcceleration: " + each.acceleration + "\n");
 							}
 						}
-						if (each.acceleration < firstRange || each.acceleration > secondRange) {
+						if (each.acceleration < firstRange || secondRange < 4.5) {
 							System.out.println("\n" + "We haven't got cars for you" + "\n");
 						}
 					}
 					if (secondNum == 4) {
 						try (FileOutputStream output = new FileOutputStream("C:\\Users\\malevich\\Desktop\\File.txt")) {
-							byte[] byteFile = str.getBytes();
+							byte[] byteFile = taxiPark.toString().getBytes();
 							output.write(byteFile);
 							System.out.println("\n" + "Done!" + "\n");
 						} catch (IOException e1) {
-							System.out.println("Input/Output error!");
+							System.out.println("\n" + "Input/Output error!" + "\n");
 						}
 					}
 					if (secondNum == 5) {
@@ -106,9 +105,9 @@ class Run {
 							}
 							System.out.println("\n");
 						} catch (FileNotFoundException e1) {
-							System.out.println("File not found!");
+							System.out.println("\n" + "File not found!" + "\n");
 						} catch (IOException e1) {
-							System.out.println("Input/Output error!");
+							System.out.println("\n" + "Input/Output error!" + "\n");
 						}
 					}
 					if (secondNum == 6) {
@@ -128,7 +127,7 @@ class Run {
 				}
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("\n" + "Error - not a number!");
+			System.out.println("\n" + "Error - not a integer! Programm closed.");
 		}
 	}
 }
