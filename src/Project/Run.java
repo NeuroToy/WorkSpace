@@ -129,6 +129,6 @@ class Run {
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("\n" + "Error - not a number!");
-		} 
+		}
 	}
 }
