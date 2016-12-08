@@ -1,5 +1,9 @@
 package Project;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,6 +25,7 @@ class Run {
 		boolean inspection = true;
 		Car each;
 		Iterator<Car> itr;
+		String str = taxiPark.toString();
 
 		try (Scanner scan = new Scanner(System.in);
 				Scanner secondScan = new Scanner(System.in);
@@ -42,7 +47,9 @@ class Run {
 					System.out.println("\n" + "1. Show the total cost of cars:");
 					System.out.println("2. Sort by fuel consumption:");
 					System.out.println("3. Find car by acceleration range:");
-					System.out.println("4. Exit" + "\n");
+					System.out.println("4. Write a file:");
+					System.out.println("5. Read from file:");
+					System.out.println("6. Exit" + "\n");
 					int secondNum = secondScan.nextInt();
 					if (secondNum == 1) {
 						itr = taxiPark.iterator();
@@ -79,11 +86,35 @@ class Run {
 						}
 					}
 					if (secondNum == 4) {
+						try (FileOutputStream output = new FileOutputStream("C:\\Users\\malevich\\Desktop\\File.txt")) {
+							byte[] byteFile = str.getBytes();
+							output.write(byteFile);
+							System.out.println("\n" + "Done!" + "\n");
+						} catch (IOException e1) {
+							System.out.println("Input/Output error!");
+						}
+					}
+					if (secondNum == 5) {
+						try (FileInputStream input = new FileInputStream("C:\\Users\\malevich\\Desktop\\File.txt")) {
+							byte[] byteFile = new byte[input.available()];
+							input.read(byteFile, 0, input.available());
+							System.out.print("\n");
+							for (int i = 0; i < byteFile.length; i++) {
+								System.out.print((char) byteFile[i]);
+							}
+							System.out.println("\n");
+						} catch (FileNotFoundException e1) {
+							System.out.println("File not found!");
+						} catch (IOException e1) {
+							System.out.println("Input/Output error!");
+						}
+					}
+					if (secondNum == 6) {
 						inspection = false;
 						System.out.println("\nProgramm closed.");
 						System.exit(num);
 					}
-					if (secondNum > 4) {
+					if (secondNum > 6) {
 						System.out.println("\nHaven't got variants, please try again\n");
 					}
 					break;
@@ -98,6 +129,7 @@ class Run {
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("\n" + "Error - not a number!");
+		} finally {
 		}
 	}
 }
