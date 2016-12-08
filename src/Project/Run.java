@@ -87,7 +87,7 @@ class Run {
 						}
 					}
 					if (secondNum == 4) {
-						try (FileOutputStream output = new FileOutputStream("C:\\Users\\malevich\\Desktop\\File.txt")) {
+						try (FileOutputStream output = new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt")) {
 							byte[] byteFile = taxiPark.toString().getBytes();
 							output.write(byteFile);
 							System.out.println("\n" + "Done!" + "\n");
@@ -96,7 +96,7 @@ class Run {
 						}
 					}
 					if (secondNum == 5) {
-						try (FileInputStream input = new FileInputStream("C:\\Users\\malevich\\Desktop\\File.txt")) {
+						try (FileInputStream input = new FileInputStream("C:\\Users\\Public\\Documents\\File.txt")) {
 							byte[] byteFile = new byte[input.available()];
 							input.read(byteFile, 0, input.available());
 							System.out.print("\n");
