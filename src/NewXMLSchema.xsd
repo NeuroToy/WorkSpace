@@ -8,12 +8,14 @@
 						<xs:sequence>
 							<xs:element name="firstName"/>
 							<xs:element name="lastName"/>
-							<xs:simpleType name="age">
-								<xs:restriction base="xs:integer">
-									<xs:minInclusive value="17""/>
-									<xs:maxInclusive value="102"/>
-								</xs:restriction>
-							</xs:simpleType>
+							<xs:element name="age">
+								<xs:simpleType>
+									<xs:restriction base="xs:integer">
+										<xs:minInclusive value="17"/>
+										<xs:maxInclusive value="102"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
