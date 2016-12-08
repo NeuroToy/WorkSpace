@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="studentList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="student" maxOccurs="20">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="firstName"/>
+							<xs:element name="lastName"/>
+							<xs:simpleType name="age">
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="17""/>
+									<xs:maxInclusive value="102"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
