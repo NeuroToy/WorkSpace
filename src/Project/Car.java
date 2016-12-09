@@ -2,10 +2,38 @@ package Project;
 
 public class Car { //implements Comparable<Car>
 
-	String carName;
-	int price;
-	double acceleration;
-	Double fuelConsumption;
+	private String carName;
+	public String getCarName() {
+		return carName;
+	}
+
+	public void setCarName(String carName) {
+		this.carName = carName;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public double getAcceleration() {
+		return acceleration;
+	}
+
+	public void setAcceleration(double acceleration) {
+		this.acceleration = acceleration;
+	}
+
+	public void setFuelConsumption(Double fuelConsumption) {
+		this.fuelConsumption = fuelConsumption;
+	}
+
+	private int price;
+	private double acceleration;
+	private Double fuelConsumption;
 
 	public Car(String a, int b, double c, Double d) {
 		carName = a;
@@ -23,7 +51,4 @@ public class Car { //implements Comparable<Car>
 				+ fuelConsumption;
 	}
 
-//	public int compareTo(Car a) {
-//		return fuelConsumption.compareTo(a.getFuelConsumption());
-//	}
 }

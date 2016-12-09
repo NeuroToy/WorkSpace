@@ -4,6 +4,14 @@ public class Minibus extends Suv {
 	
 	boolean tv;
 
+	public boolean isTv() {
+		return tv;
+	}
+
+	public void setTv(boolean tv) {
+		this.tv = tv;
+	}
+
 	public Minibus(String a, int b, double c, Double d, int e, boolean f) {
 		super(a, b, c, d, e);
 		tv = f;

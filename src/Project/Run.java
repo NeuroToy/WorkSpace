@@ -55,7 +55,7 @@ class Run {
 						int costOfPark = 0;
 						while (itr.hasNext()) {
 							each = itr.next();
-							costOfPark += each.price;
+							costOfPark += each.getPrice();
 						}
 						System.out.println("\n" + costOfPark + "$" + "\n");
 					}
@@ -69,7 +69,7 @@ class Run {
 						while (itr.hasNext()) {
 							each = itr.next();
 							System.out.println(
-									"\n" + each.carName + "\nFuel consumprion: " + each.fuelConsumption + "\n");
+									"\n" + each.getCarName() + "\nFuel consumprion: " + each.getFuelConsumption() + "\n");
 						}
 					}
 					if (secondNum == 3) {
@@ -79,11 +79,11 @@ class Run {
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
-							if (each.acceleration >= firstRange && each.acceleration <= secondRange) {
-								System.out.println("\n" + each.carName + "\nAcceleration: " + each.acceleration + "\n");
+							if (each.getAcceleration() >= firstRange && each.getAcceleration() <= secondRange) {
+								System.out.println("\n" + each.getCarName() + "\nAcceleration: " + each.getAcceleration() + "\n");
 							}
 						}
-						if (each.acceleration < firstRange || secondRange < 4.5) {
+						if (each.getAcceleration()  < firstRange || secondRange < 4.5) {
 							System.out.println("\n" + "We haven't got cars for you" + "\n");
 						}
 					}

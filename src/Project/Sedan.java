@@ -4,6 +4,14 @@ public class Sedan extends PassengerCar {
 
 	String typeOfTransmission;
 
+	public String getTypeOfTransmission() {
+		return typeOfTransmission;
+	}
+
+	public void setTypeOfTransmission(String typeOfTransmission) {
+		this.typeOfTransmission = typeOfTransmission;
+	}
+
 	public Sedan(String a, int b, double c, double d, Double e, String f) {
 		super(a, b, c, d, e);
 		typeOfTransmission = f;
