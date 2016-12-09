@@ -26,10 +26,7 @@ class Run {
 		boolean inspection = true;
 		Car each = null;
 
-		try (Scanner scan = new Scanner(System.in);
-				Scanner secondScan = new Scanner(System.in);
-				Scanner thirdScan = new Scanner(System.in);
-				Scanner fourthScan = new Scanner(System.in);) {
+		try (Scanner scan = new Scanner(System.in);) {
 			while (inspection) {
 				System.out.println("1. Show all park's cars:");
 				System.out.println("2. Operations:");
@@ -49,7 +46,7 @@ class Run {
 					System.out.println("4. Write a file:");
 					System.out.println("5. Read from file:");
 					System.out.println("6. Exit" + "\n");
-					int secondNum = secondScan.nextInt();
+					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
 						Iterator<Car> itr = taxiPark.iterator();
 						int costOfPark = 0;
@@ -74,8 +71,8 @@ class Run {
 					}
 					if (secondNum == 3) {
 						System.out.print("\n" + "Enter range:" + "\n\n");
-						double firstRange = thirdScan.nextDouble();
-						double secondRange = fourthScan.nextDouble();
+						double firstRange = scan.nextDouble();
+						double secondRange = scan.nextDouble();
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
