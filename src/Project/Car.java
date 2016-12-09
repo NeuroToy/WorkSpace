@@ -1,8 +1,14 @@
 package Project;
 
-public class Car { //implements Comparable<Car>
+import java.io.Serializable;
+
+public class Car implements Serializable {
 
 	private String carName;
+	private int price;
+	private double acceleration;
+	private Double fuelConsumption;
+
 	public String getCarName() {
 		return carName;
 	}
@@ -31,15 +37,11 @@ public class Car { //implements Comparable<Car>
 		this.fuelConsumption = fuelConsumption;
 	}
 
-	private int price;
-	private double acceleration;
-	private Double fuelConsumption;
-
-	public Car(String a, int b, double c, Double d) {
-		carName = a;
-		price = b;
-		acceleration = c;
-		fuelConsumption = d;
+	public Car(String carName, int price, double acceleration, Double fuelConsumption) {
+		this.carName = carName;
+		this.price = price;
+		this.acceleration = acceleration;
+		this.fuelConsumption = fuelConsumption;
 	}
 
 	public Double getFuelConsumption() {
