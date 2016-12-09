@@ -3,7 +3,7 @@ package Project;
 public class Sedan extends PassengerCar {
 
 	private static final long serialVersionUID = 1L;
-	String typeOfTransmission;
+	private String typeOfTransmission;
 
 	public String getTypeOfTransmission() {
 		return typeOfTransmission;
@@ -13,9 +13,9 @@ public class Sedan extends PassengerCar {
 		this.typeOfTransmission = typeOfTransmission;
 	}
 
-	public Sedan(String a, int b, double c, double d, Double e, String f) {
+	public Sedan(String a, int b, double c, double d, Double e, String typeOfTransmission) {
 		super(a, b, c, d, e);
-		typeOfTransmission = f;
+		this.typeOfTransmission = typeOfTransmission;
 	}
 
 	@Override

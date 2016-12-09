@@ -3,7 +3,7 @@ package Project;
 public class PassengerCar extends Car {
 
 	private static final long serialVersionUID = 1L;
-	double engine;
+	private double engine;
 
 	public double getEngine() {
 		return engine;
@@ -13,9 +13,9 @@ public class PassengerCar extends Car {
 		this.engine = engine;
 	}
 
-	public PassengerCar(String a, int b, double c, Double d, double e) {
+	public PassengerCar(String a, int b, double c, Double d, double engine) {
 		super(a, b, c, d);
-		engine = e;
+		this.engine = engine;
 	}
 
 	@Override

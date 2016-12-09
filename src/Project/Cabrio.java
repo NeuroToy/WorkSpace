@@ -3,7 +3,7 @@ package Project;
 public class Cabrio extends PassengerCar {
 
 	private static final long serialVersionUID = 1L;
-	String trim;
+	private String trim;
 
 	public String getTrim() {
 		return trim;

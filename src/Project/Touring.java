@@ -3,7 +3,7 @@ package Project;
 public class Touring extends PassengerCar {
 
 	private static final long serialVersionUID = 1L;
-	String driveUnit;
+	private String driveUnit;
 
 	public String getDriveUnit() {
 		return driveUnit;
@@ -13,9 +13,9 @@ public class Touring extends PassengerCar {
 		this.driveUnit = driveUnit;
 	}
 
-	public Touring(String a, int b, double c, Double d, double e, String f) {
+	public Touring(String a, int b, double c, Double d, double e, String driveUnit) {
 		super(a, b, c, d, e);
-		driveUnit = f;
+		this.driveUnit = driveUnit;
 	}
 
 	@Override

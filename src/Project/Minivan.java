@@ -3,7 +3,7 @@ package Project;
 public class Minivan extends Suv {
 
 	private static final long serialVersionUID = 1L;
-	boolean babyChair;
+	private boolean babyChair;
 
 	public boolean isBabyChair() {
 		return babyChair;
@@ -13,9 +13,9 @@ public class Minivan extends Suv {
 		this.babyChair = babyChair;
 	}
 
-	public Minivan(String a, int b, double c, Double d, int e, boolean f) {
+	public Minivan(String a, int b, double c, Double d, int e, boolean babyChair) {
 		super(a, b, c, d, e);
-		babyChair = f;
+		this.babyChair = babyChair;
 	}
 
 	@Override

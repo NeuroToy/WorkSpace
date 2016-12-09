@@ -3,7 +3,7 @@ package Project;
 public class Minibus extends Suv {
 
 	private static final long serialVersionUID = 1L;
-	boolean tv;
+	private boolean tv;
 
 	public boolean isTv() {
 		return tv;
@@ -13,9 +13,9 @@ public class Minibus extends Suv {
 		this.tv = tv;
 	}
 
-	public Minibus(String a, int b, double c, Double d, int e, boolean f) {
+	public Minibus(String a, int b, double c, Double d, int e, boolean tv) {
 		super(a, b, c, d, e);
-		tv = f;
+		this.tv = tv;
 	}
 	
 	@Override

@@ -3,7 +3,7 @@ package Project;
 public class Pickup extends Suv {
 
 	private static final long serialVersionUID = 1L;
-	double bodyCapacity;
+	private double bodyCapacity;
 
 	public double getBodyCapacity() {
 		return bodyCapacity;
@@ -13,9 +13,9 @@ public class Pickup extends Suv {
 		this.bodyCapacity = bodyCapacity;
 	}
 
-	public Pickup(String a, int b, double c, Double d, int e, double f) {
+	public Pickup(String a, int b, double c, Double d, int e, double bodyCapacity) {
 		super(a, b, c, d, e);
-		bodyCapacity = f;
+		this.bodyCapacity = bodyCapacity;
 	}
 
 	@Override

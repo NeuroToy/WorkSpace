@@ -3,7 +3,7 @@ package Project;
 public class Suv extends Car {
 
 	private static final long serialVersionUID = 1L;
-	int maxCapacity;
+	private int maxCapacity;
 
 	public int getMaxCapacity() {
 		return maxCapacity;
@@ -13,9 +13,9 @@ public class Suv extends Car {
 		this.maxCapacity = maxCapacity;
 	}
 
-	public Suv(String a, int b, double c, Double d, int e) {
+	public Suv(String a, int b, double c, Double d, int maxCapacity) {
 		super(a, b, c, d);
-		maxCapacity = e;
+		this.maxCapacity = maxCapacity;
 	}
 
 	@Override
