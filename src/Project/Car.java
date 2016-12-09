@@ -9,7 +9,7 @@ import java.io.Serializable;
  * <b>acceleration</b> <br>
  * <b>fuelConsumption</b>
  * 
- * @author malevich
+ * @author JF
  */
 public class Car implements Serializable {
 
