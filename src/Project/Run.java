@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -65,8 +67,8 @@ class Run {
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
-							System.out.println(
-									"\n" + each.getCarName() + "\nFuel consumprion: " + each.getFuelConsumption() + "\n");
+							System.out.println("\n" + each.getCarName() + "\nFuel consumprion: "
+									+ each.getFuelConsumption() + "\n");
 						}
 					}
 					if (secondNum == 3) {
@@ -77,35 +79,34 @@ class Run {
 						while (itr.hasNext()) {
 							each = itr.next();
 							if (each.getAcceleration() >= firstRange && each.getAcceleration() <= secondRange) {
-								System.out.println("\n" + each.getCarName() + "\nAcceleration: " + each.getAcceleration() + "\n");
+								System.out.println(
+										"\n" + each.getCarName() + "\nAcceleration: " + each.getAcceleration() + "\n");
 							}
 						}
-						if (each.getAcceleration()  < firstRange || secondRange < 4.5) {
+						if (each.getAcceleration() < firstRange || secondRange < 4.5) {
 							System.out.println("\n" + "We haven't got cars for you" + "\n");
 						}
 					}
 					if (secondNum == 4) {
-						try (FileOutputStream output = new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt")) {
-							byte[] byteFile = taxiPark.toString().getBytes();
-							output.write(byteFile);
+						try (ObjectOutputStream output = new ObjectOutputStream(
+								new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
+							output.writeObject(taxiPark);
 							System.out.println("\n" + "Done!" + "\n");
 						} catch (IOException e1) {
 							System.out.println("\n" + "Input/Output error!" + "\n");
 						}
 					}
 					if (secondNum == 5) {
-						try (FileInputStream input = new FileInputStream("C:\\Users\\Public\\Documents\\File.txt")) {
-							byte[] byteFile = new byte[input.available()];
-							input.read(byteFile, 0, input.available());
-							System.out.print("\n");
-							for (int i = 0; i < byteFile.length; i++) {
-								System.out.print((char) byteFile[i]);
-							}
-							System.out.println("\n");
+						try (ObjectInputStream input = new ObjectInputStream(
+								new FileInputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
+							Object file_1 = input.readObject();
+							System.out.print("\n" + file_1 + "\n\n");
 						} catch (FileNotFoundException e1) {
 							System.out.println("\n" + "File not found!" + "\n");
 						} catch (IOException e1) {
 							System.out.println("\n" + "Input/Output error!" + "\n");
+						} catch (ClassNotFoundException e1) {
+							System.out.println("\n" + "Class not found!" + "\n");
 						}
 					}
 					if (secondNum == 6) {

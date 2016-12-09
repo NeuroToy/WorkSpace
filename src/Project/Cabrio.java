@@ -2,6 +2,7 @@ package Project;
 
 public class Cabrio extends PassengerCar {
 
+	private static final long serialVersionUID = 1L;
 	String trim;
 
 	public String getTrim() {
@@ -12,9 +13,9 @@ public class Cabrio extends PassengerCar {
 		this.trim = trim;
 	}
 
-	public Cabrio(String a, int b, double c, Double d, double e, String f) {
+	public Cabrio(String a, int b, double c, Double d, double e, String trim) {
 		super(a, b, c, d, e);
-		trim = f;
+		this.trim = trim;
 	}
 
 	@Override

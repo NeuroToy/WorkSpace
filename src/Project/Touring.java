@@ -2,6 +2,7 @@ package Project;
 
 public class Touring extends PassengerCar {
 
+	private static final long serialVersionUID = 1L;
 	String driveUnit;
 
 	public String getDriveUnit() {

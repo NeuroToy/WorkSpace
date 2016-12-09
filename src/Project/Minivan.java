@@ -2,6 +2,7 @@ package Project;
 
 public class Minivan extends Suv {
 
+	private static final long serialVersionUID = 1L;
 	boolean babyChair;
 
 	public boolean isBabyChair() {

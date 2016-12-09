@@ -2,6 +2,7 @@ package Project;
 
 public class Pickup extends Suv {
 
+	private static final long serialVersionUID = 1L;
 	double bodyCapacity;
 
 	public double getBodyCapacity() {

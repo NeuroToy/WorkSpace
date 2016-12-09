@@ -1,7 +1,8 @@
 package Project;
 
 public class Minibus extends Suv {
-	
+
+	private static final long serialVersionUID = 1L;
 	boolean tv;
 
 	public boolean isTv() {

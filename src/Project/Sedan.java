@@ -2,6 +2,7 @@ package Project;
 
 public class Sedan extends PassengerCar {
 
+	private static final long serialVersionUID = 1L;
 	String typeOfTransmission;
 
 	public String getTypeOfTransmission() {

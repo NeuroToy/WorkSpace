@@ -2,6 +2,7 @@ package Project;
 
 public class PassengerCar extends Car {
 
+	private static final long serialVersionUID = 1L;
 	double engine;
 
 	public double getEngine() {

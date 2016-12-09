@@ -2,6 +2,7 @@ package Project;
 
 public class Suv extends Car {
 
+	private static final long serialVersionUID = 1L;
 	int maxCapacity;
 
 	public int getMaxCapacity() {
