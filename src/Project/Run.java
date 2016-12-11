@@ -28,7 +28,11 @@ class Run {
 		boolean inspection = true;
 		Car each = null;
 
-		try (Scanner scan = new Scanner(System.in);) {
+		try (Scanner scan = new Scanner(System.in);
+				ObjectOutputStream output = new ObjectOutputStream(
+						new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt"));
+				ObjectInputStream input = new ObjectInputStream(
+						new FileInputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
 			while (inspection) {
 				System.out.println("1. Show all park's cars:");
 				System.out.println("2. Operations:");
@@ -88,26 +92,12 @@ class Run {
 						}
 					}
 					if (secondNum == 4) {
-						try (ObjectOutputStream output = new ObjectOutputStream(
-								new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
-							output.writeObject(taxiPark);
-							System.out.println("\n" + "Done!" + "\n");
-						} catch (IOException e1) {
-							System.out.println("\n" + "Input/Output error!" + "\n");
-						}
+						output.writeObject(taxiPark);
+						System.out.println("\n" + "Done!" + "\n");
 					}
 					if (secondNum == 5) {
-						try (ObjectInputStream input = new ObjectInputStream(
-								new FileInputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
-							Object file_1 = input.readObject();
-							System.out.print("\n" + file_1 + "\n\n");
-						} catch (FileNotFoundException e1) {
-							System.out.println("\n" + "File not found!" + "\n");
-						} catch (IOException e1) {
-							System.out.println("\n" + "Input/Output error!" + "\n");
-						} catch (ClassNotFoundException e1) {
-							System.out.println("\n" + "Class not found!" + "\n");
-						}
+						Object file_1 = input.readObject();
+						System.out.print("\n" + file_1 + "\n\n");
 					}
 					if (secondNum == 6) {
 						inspection = false;
@@ -127,6 +117,12 @@ class Run {
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("\n" + "Error - not a integer! Programm closed.");
+		} catch (FileNotFoundException e1) {
+			System.out.println("\n" + "File not found!" + "\n");
+		} catch (IOException e1) {
+			System.out.println("\n" + "Input/Output error!" + "\n");
+		} catch (ClassNotFoundException e1) {
+			System.out.println("\n" + "Class not found!" + "\n");
 		}
 	}
 }
