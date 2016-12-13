@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pointList>
+	<point>
+		<x>10</x>
+		<y>30</y>
+		<unit>px</unit>
+	</point>
+	<point>
+		<x>17</x>
+		<y>75</y>
+		<unit>cm</unit>
+	</point>
+</pointList>
