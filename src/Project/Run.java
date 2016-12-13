@@ -60,7 +60,7 @@ class Run {
 							each = itr.next();
 							costOfPark += each.getPrice();
 						}
-						System.out.println("\n" + costOfPark + "$" + "\n");
+						System.out.println("\n" + costOfPark + "$\n");
 					}
 					if (secondNum == 2) {
 						Collections.sort(taxiPark, new Comparator<Car>() {
@@ -116,13 +116,13 @@ class Run {
 				}
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("\n" + "Error - not a integer! Programm closed.");
+			System.out.println("\nError - not a integer! Programm closed.");
 		} catch (FileNotFoundException e1) {
-			System.out.println("\n" + "File not found!" + "\n");
+			System.out.println("\nFile not found!\n");
 		} catch (IOException e1) {
-			System.out.println("\n" + "Input/Output error!" + "\n");
+			System.out.println("\nInput/Output error!\n");
 		} catch (ClassNotFoundException e1) {
-			System.out.println("\n" + "Class not found!" + "\n");
+			System.out.println("\nClass not found!\n");
 		}
 	}
 }
