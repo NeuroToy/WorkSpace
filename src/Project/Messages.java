@@ -1,18 +1,25 @@
 package Project;
 
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class Messages {
-	private static final String BUNDLE_NAME = "Project.messages"; //$NON-NLS-1$
 
-	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle
-			.getBundle(BUNDLE_NAME);
+	private String language;
+	private String country;
 
-	private Messages() {
+	private final static String BUNDLE_NAME = "Project.messages";
+
+	public Locale currentLocale = new Locale(language, country);
+
+	public void setCurrentLocale(Locale current_Locale) {
+		currentLocale = current_Locale;
 	}
 
-	public static String getString(String key) {
+	private final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle(BUNDLE_NAME, currentLocale);
+
+	public String getString(String key) {
 		try {
 			return RESOURCE_BUNDLE.getString(key);
 		} catch (MissingResourceException e) {

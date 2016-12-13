@@ -12,7 +12,6 @@ import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Scanner;
 
 class Run {
@@ -21,38 +20,23 @@ class Run {
 
 		List<Car> taxiPark = new ArrayList<Car>();
 		taxiPark.add(new Minibus("Mercedes V-250", 60600, 9.1, 6.0, 5, true));
-		taxiPark.add(new Minivan("Dodge Grand Caravan", 24590, 10.8, 12.4, 7,
-				true));
+		taxiPark.add(new Minivan("Dodge Grand Caravan", 24590, 10.8, 12.4, 7, true));
 		taxiPark.add(new Pickup("Volkswagen Amarok", 25000, 11.1, 7.9, 4, 189));
-		taxiPark.add(new Cabrio("Mercedes E400", 63800, 5.2, 9.4, 3.0,
-				"Leather"));
-		taxiPark.add(new Sedan("Audi A8 4.0 TFSI", 105060, 4.5, 9.1, 4.0,
-				"Quattro"));
-		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4,
-				"Tip-Tronic"));
+		taxiPark.add(new Cabrio("Mercedes E400", 63800, 5.2, 9.4, 3.0, "Leather"));
+		taxiPark.add(new Sedan("Audi A8 4.0 TFSI", 105060, 4.5, 9.1, 4.0, "Quattro"));
+		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4, "Tip-Tronic"));
 		boolean inspection = true;
 		Car each = null;
 
 		try (Scanner scan = new Scanner(System.in);
 				ObjectOutputStream output = new ObjectOutputStream(
-						new FileOutputStream(
-								"C:\\Users\\Public\\Documents\\File.txt"));
+						new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt"));
 				ObjectInputStream input = new ObjectInputStream(
-						new FileInputStream(
-								"C:\\Users\\Public\\Documents\\File.txt"))) {
-			System.out.println("1. EN");
-			System.out.println("1. RU");
-			int loc = scan.nextInt();
-			if (loc == 1) {
-				new Locale("en", "US");
-			}
-			if (loc == 2) {
-				new Locale("ru", "RU");
-			}
+						new FileInputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
 			while (inspection) {
-				System.out.println(Messages.getString("Run.11"));
-				System.out.println(Messages.getString("Run.12"));
-				System.out.println(Messages.getString("Run.13"));
+				System.out.println("1. Show all park's cars:");
+				System.out.println("2. Operations:");
+				System.out.println("3. Exit\n");
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
@@ -62,12 +46,12 @@ class Run {
 					System.out.println("\n");
 					break;
 				case 2:
-					System.out.println(Messages.getString("Run.17"));
-					System.out.println(Messages.getString("Run.18"));
-					System.out.println(Messages.getString("Run.19"));
-					System.out.println(Messages.getString("Run.20"));
-					System.out.println(Messages.getString("Run.21"));
-					System.out.println(Messages.getString("Run.22"));
+					System.out.println("\n1. Show the total cost of cars:");
+					System.out.println("2. Sort by fuel consumption:");
+					System.out.println("3. Find car by acceleration range:");
+					System.out.println("4. Write a file:");
+					System.out.println("5. Read from file:");
+					System.out.println("6. Exit\n");
 					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
 						Iterator<Car> itr = taxiPark.iterator();
@@ -76,45 +60,40 @@ class Run {
 							each = itr.next();
 							costOfPark += each.getPrice();
 						}
-						System.out.println("\n" + costOfPark + "$\n");
+						System.out.println("\n" + costOfPark + "$" + "\n");
 					}
 					if (secondNum == 2) {
 						Collections.sort(taxiPark, new Comparator<Car>() {
 							public int compare(Car a, Car b) {
-								return a.getFuelConsumption().compareTo(
-										b.getFuelConsumption());
+								return a.getFuelConsumption().compareTo(b.getFuelConsumption());
 							}
 						});
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
-							System.out.println("\n" + each.getCarName()
-									+ Messages.getString("Run.26")
+							System.out.println("\n" + each.getCarName() + "\nFuel consumprion: "
 									+ each.getFuelConsumption() + "\n");
 						}
 					}
 					if (secondNum == 3) {
-						System.out.print(Messages.getString("Run.28"));
+						System.out.print("\nEnter range:\n\n");
 						double firstRange = scan.nextDouble();
 						double secondRange = scan.nextDouble();
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
-							if (each.getAcceleration() >= firstRange
-									&& each.getAcceleration() <= secondRange) {
-								System.out.println("\n" + each.getCarName()
-										+ Messages.getString("Run.30")
-										+ each.getAcceleration() + "\n");
+							if (each.getAcceleration() >= firstRange && each.getAcceleration() <= secondRange) {
+								System.out.println(
+										"\n" + each.getCarName() + "\nAcceleration: " + each.getAcceleration() + "\n");
 							}
 						}
-						if (each.getAcceleration() < firstRange
-								|| secondRange < 4.5) {
-							System.out.println(Messages.getString("Run.32"));
+						if (each.getAcceleration() < firstRange || secondRange < 4.5) {
+							System.out.println("\nWe haven't got cars for you\n");
 						}
 					}
 					if (secondNum == 4) {
 						output.writeObject(taxiPark);
-						System.out.println(Messages.getString("Run.33"));
+						System.out.println("\nDone!\n");
 					}
 					if (secondNum == 5) {
 						Object file_1 = input.readObject();
@@ -122,28 +101,28 @@ class Run {
 					}
 					if (secondNum == 6) {
 						inspection = false;
-						System.out.println(Messages.getString("Run.36"));
+						System.out.println("\nProgramm closed.");
 					}
 					if (secondNum > 6) {
-						System.out.println(Messages.getString("Run.37"));
+						System.out.println("\nHaven't got variants, please try again\n");
 					}
 					break;
 				case 3:
 					inspection = false;
-					System.out.println(Messages.getString("Run.38"));
+					System.out.println("\nProgramm closed.");
 					break;
 				default:
-					System.out.println(Messages.getString("Run.39"));
+					System.out.println("\nWe haven't got variants, please try again\n");
 				}
 			}
 		} catch (InputMismatchException e) {
-			System.out.println(Messages.getString("Run.40"));
+			System.out.println("\nError - not a integer! Programm closed.");
 		} catch (FileNotFoundException e1) {
-			System.out.println(Messages.getString("Run.41"));
+			System.out.println("\nFile not found!\n");
 		} catch (IOException e1) {
-			System.out.println(Messages.getString("Run.42"));
+			System.out.println("\nInput/Output error!\n");
 		} catch (ClassNotFoundException e1) {
-			System.out.println(Messages.getString("Run.43"));
+			System.out.println("\nClass not found!\n");
 		}
 	}
 }
