@@ -36,7 +36,7 @@ class Run {
 			while (inspection) {
 				System.out.println("1. Show all park's cars:");
 				System.out.println("2. Operations:");
-				System.out.println("3. Exit" + "\n");
+				System.out.println("3. Exit\n");
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
@@ -46,12 +46,12 @@ class Run {
 					System.out.println("\n");
 					break;
 				case 2:
-					System.out.println("\n" + "1. Show the total cost of cars:");
+					System.out.println("\n1. Show the total cost of cars:");
 					System.out.println("2. Sort by fuel consumption:");
 					System.out.println("3. Find car by acceleration range:");
 					System.out.println("4. Write a file:");
 					System.out.println("5. Read from file:");
-					System.out.println("6. Exit" + "\n");
+					System.out.println("6. Exit\n");
 					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
 						Iterator<Car> itr = taxiPark.iterator();
@@ -76,7 +76,7 @@ class Run {
 						}
 					}
 					if (secondNum == 3) {
-						System.out.print("\n" + "Enter range:" + "\n\n");
+						System.out.print("\nEnter range:\n\n");
 						double firstRange = scan.nextDouble();
 						double secondRange = scan.nextDouble();
 						Iterator<Car> itr = taxiPark.iterator();
@@ -88,12 +88,12 @@ class Run {
 							}
 						}
 						if (each.getAcceleration() < firstRange || secondRange < 4.5) {
-							System.out.println("\n" + "We haven't got cars for you" + "\n");
+							System.out.println("\nWe haven't got cars for you\n");
 						}
 					}
 					if (secondNum == 4) {
 						output.writeObject(taxiPark);
-						System.out.println("\n" + "Done!" + "\n");
+						System.out.println("\nDone!\n");
 					}
 					if (secondNum == 5) {
 						Object file_1 = input.readObject();
@@ -112,7 +112,7 @@ class Run {
 					System.out.println("\nProgramm closed.");
 					break;
 				default:
-					System.out.println("\n" + "We haven't got variants, please try again" + "\n");
+					System.out.println("\nWe haven't got variants, please try again\n");
 				}
 			}
 		} catch (InputMismatchException e) {
