@@ -2,21 +2,23 @@
 <xsl:stylesheet version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html" />
-	<xsl:template match="/">
+	<xsl:template match="/pointList">
 		<html>
 			<body>
-				<table>
-					<td>
+				<table border="1">
+					<xsl:for-each select="point">
 						<tr>
-							<xsl:value-of select="x" />
+							<td>
+								<xsl:value-of select="x" />
+							</td>
+							<td>
+								<xsl:value-of select="y" />
+							</td>
+							<td>
+								<xsl:value-of select="unit" />
+							</td>
 						</tr>
-						<tr>
-							<xsl:value-of select="y" />
-						</tr>
-						<tr>
-							<xsl:value-of select="unit" />
-						</tr>
-					</td>
+					</xsl:for-each>
 				</table>
 			</body>
 		</html>

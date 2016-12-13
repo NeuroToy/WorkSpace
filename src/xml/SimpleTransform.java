@@ -12,15 +12,10 @@ public class SimpleTransform {
 			TransformerFactory tf = TransformerFactory.newInstance();
 			// установка используемого XSL-преобразования
 			Transformer transformer = tf
-					.newTransformer(new StreamSource(
-							"C:\\Users\\user\\git\\WorkSpace\\src\\xml\\XSL_example.xsl"));
+					.newTransformer(new StreamSource("C:\\Users\\Public\\Documents\\XSL_example.xsl"));
 			// установка исходного XML-документа и конечного XML-файла
-			transformer
-					.transform(
-							new StreamSource(
-									"C:\\Users\\user\\git\\WorkSpace\\src\\xml\\example.xml"),
-							new StreamResult(
-									"C:\\Users\\user\\git\\WorkSpace\\src\\xml\\new_example.html"));
+			transformer.transform(new StreamSource("C:\\Users\\Public\\Documents\\example.xml"),
+					new StreamResult("C:\\Users\\Public\\Documents\\new_example.html"));
 			System.out.println("Transform " + " complete");
 
 			/*
