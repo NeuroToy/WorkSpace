@@ -16,7 +16,7 @@ public class SimpleTransform {
 			// установка исходного XML-документа и конечного XML-файла
 			transformer.transform(new StreamSource("C:\\Users\\Public\\Documents\\example.xml"),
 					new StreamResult("C:\\Users\\Public\\Documents\\new_example.html"));
-			System.out.println("Transform " + " complete");
+			System.out.println("Transform complete");
 
 			/*
 			 * TransformerFactory tf = TransformerFactory.newInstance(); //
@@ -28,7 +28,7 @@ public class SimpleTransform {
 			 * + " complete");
 			 */
 		} catch (TransformerException e) {
-			System.err.println("Impossible transform file " + " : " + e);
+			System.err.println("Impossible transform file: " + e);
 		}
 	}
 }
