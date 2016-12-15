@@ -14,8 +14,8 @@ import java.util.Scanner;
 
 class Run {
 
-	private static double secondRange;
 	private static double firstRange;
+	private static double secondRange;
 
 	public static void main(String[] args) {
 
