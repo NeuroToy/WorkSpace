@@ -7,15 +7,15 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.InputMismatchException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
 class Run {
+
+	private static double secondRange;
+	private static double firstRange;
 
 	public static void main(String[] args) {
 
@@ -27,7 +27,6 @@ class Run {
 		taxiPark.add(new Sedan("Audi A8 4.0 TFSI", 105060, 4.5, 9.1, 4.0, "Quattro"));
 		taxiPark.add(new Touring("BMW 550i GT Touring", 112500, 4.8, 9.6, 4.4, "Tip-Tronic"));
 		boolean inspection = true;
-		Car each = null;
 
 		try (Scanner scan = new Scanner(System.in);
 				ObjectOutputStream output = new ObjectOutputStream(
@@ -44,62 +43,27 @@ class Run {
 				Locale.setDefault(new Locale("ru", "RU"));
 			}
 			while (inspection) {
-				System.out.println(Messages.getString("Run.11"));
-				System.out.println(Messages.getString("Run.12"));
-				System.out.println(Messages.getString("Run.13"));
+				Print.firstMenu();
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
-					for (Car x : taxiPark) {
-						System.out.print("\n" + x + "\n");
-					}
-					System.out.println("\n");
+					Collection.showAll((ArrayList<Car>) taxiPark);
 					break;
 				case 2:
-					System.out.println(Messages.getString("Run.17"));
-					System.out.println(Messages.getString("Run.18"));
-					System.out.println(Messages.getString("Run.19"));
-					System.out.println(Messages.getString("Run.20"));
-					System.out.println(Messages.getString("Run.21"));
-					System.out.println(Messages.getString("Run.22"));
+					Print.secondMenu();
 					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
-						Iterator<Car> itr = taxiPark.iterator();
-						int costOfPark = 0;
-						while (itr.hasNext()) {
-							each = itr.next();
-							costOfPark += each.getPrice();
-						}
-						System.out.println("\n" + costOfPark + "$" + "\n");
+						Collection.showPrice((ArrayList<Car>) taxiPark);
 					}
 					if (secondNum == 2) {
-						Collections.sort(taxiPark, new Comparator<Car>() {
-							public int compare(Car a, Car b) {
-								return a.getFuelConsumption().compareTo(b.getFuelConsumption());
-							}
-						});
-						Iterator<Car> itr = taxiPark.iterator();
-						while (itr.hasNext()) {
-							each = itr.next();
-							System.out.println("\n" + each.getCarName() + Messages.getString("Run.27")
-									+ each.getFuelConsumption() + "\n");
-						}
+						Collection.sortByFuel((ArrayList<Car>) taxiPark);
 					}
 					if (secondNum == 3) {
 						System.out.print(Messages.getString("Run.29"));
-						double firstRange = scan.nextDouble();
-						double secondRange = scan.nextDouble();
-						Iterator<Car> itr = taxiPark.iterator();
-						while (itr.hasNext()) {
-							each = itr.next();
-							if (each.getAcceleration() >= firstRange && each.getAcceleration() <= secondRange) {
-								System.out.println("\n" + each.getCarName() + Messages.getString("Run.31")
-										+ each.getAcceleration() + "\n");
-							}
-						}
-						if (each.getAcceleration() < firstRange || secondRange < 4.5) {
-							System.out.println(Messages.getString("Run.33"));
-						}
+						firstRange = scan.nextDouble();
+						secondRange = scan.nextDouble();
+						Collection.sortByAcceleration((ArrayList<Car>) taxiPark, firstRange, secondRange);
+
 					}
 					if (secondNum == 4) {
 						output.writeObject(taxiPark);
