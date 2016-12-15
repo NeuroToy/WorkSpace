@@ -47,22 +47,22 @@ class Run {
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
-					Collection.showAll((ArrayList<Car>) taxiPark);
+					Operations.showAll((ArrayList<Car>) taxiPark);
 					break;
 				case 2:
 					Menu.secondMenu();
 					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
-						Collection.showPrice((ArrayList<Car>) taxiPark);
+						Operations.showPrice((ArrayList<Car>) taxiPark);
 					}
 					if (secondNum == 2) {
-						Collection.sortByFuel((ArrayList<Car>) taxiPark);
+						Operations.sortByFuel((ArrayList<Car>) taxiPark);
 					}
 					if (secondNum == 3) {
 						System.out.print(Messages.getString("Run.29"));
 						firstRange = scan.nextDouble();
 						secondRange = scan.nextDouble();
-						Collection.sortByAcceleration((ArrayList<Car>) taxiPark, firstRange, secondRange);
+						Operations.sortByAcceleration((ArrayList<Car>) taxiPark, firstRange, secondRange);
 
 					}
 					if (secondNum == 4) {
