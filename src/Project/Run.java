@@ -38,7 +38,7 @@ class Run {
 			System.out.println("2. RU\n");
 			int loc = scan.nextInt();
 			if (loc == 1) {
-				Locale.getDefault();
+				Locale.setDefault(new Locale("en", "US"));
 			}
 			if (loc == 2) {
 				Locale.setDefault(new Locale("ru", "RU"));
