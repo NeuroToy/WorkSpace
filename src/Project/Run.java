@@ -43,14 +43,14 @@ class Run {
 				Locale.setDefault(new Locale("ru", "RU"));
 			}
 			while (inspection) {
-				Print.firstMenu();
+				Menu.firstMenu();
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
 					Collection.showAll((ArrayList<Car>) taxiPark);
 					break;
 				case 2:
-					Print.secondMenu();
+					Menu.secondMenu();
 					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
 						Collection.showPrice((ArrayList<Car>) taxiPark);

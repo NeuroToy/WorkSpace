@@ -1,6 +1,6 @@
 package Project;
 
-public class Print {
+public class Menu {
 
 	public static void firstMenu() {
 		System.out.println(Messages.getString("Run.11"));
