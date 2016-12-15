@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<greenhouse>
+	<plant name="poppy" soil="black earth" origin="NL">
+		<visualParameters>
+			<color>red</color>
+		</visualParameters>
+		<growingTips>
+			<temperature unit="degrees">17</temperature>
+			<watering unit="ml per week">600</watering>
+		</growingTips>
+		<multiplying>
+			<reproduction>seed</reproduction>
+		</multiplying>
+	</plant>
+	<plant name="maple" soil="garden" origin="CA">
+		<visualParameters>
+			<color>green</color>
+		</visualParameters>
+		<growingTips>
+			<temperature unit="degrees">12</temperature>
+			<watering unit="ml per week">1200</watering>
+		</growingTips>
+		<multiplying>
+			<reproduction>stalk</reproduction>
+		</multiplying>
+	</plant>
+</greenhouse>
