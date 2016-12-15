@@ -20,6 +20,6 @@ public class Suv extends Car {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nMax passengers: " + maxCapacity;
+		return super.toString() + Messages.getString("Suv.0") + maxCapacity;
 	}
 }

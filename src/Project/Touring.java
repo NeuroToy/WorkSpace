@@ -20,6 +20,6 @@ public class Touring extends PassengerCar {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nDrive unit: " + driveUnit;
+		return super.toString() + Messages.getString("Touring.0") + driveUnit;
 	}
 }

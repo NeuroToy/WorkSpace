@@ -17,9 +17,9 @@ public class Minibus extends Suv {
 		super(a, b, c, d, e);
 		this.tv = tv;
 	}
-	
+
 	@Override
 	public String toString() {
-		return super.toString() + "\nTV option: " + tv;
+		return super.toString() + Messages.getString("Minibus.0") + tv;
 	}
 }

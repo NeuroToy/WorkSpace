@@ -20,6 +20,6 @@ public class Pickup extends Suv {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nBody capacity: " + bodyCapacity + "litres";
+		return super.toString() + Messages.getString("Pickup.0") + bodyCapacity + Messages.getString("Pickup.1");
 	}
 }

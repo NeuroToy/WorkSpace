@@ -20,6 +20,6 @@ public class Cabrio extends PassengerCar {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nSalon trim: " + trim;
+		return super.toString() + Messages.getString("Cabrio.0") + trim;
 	}
 }

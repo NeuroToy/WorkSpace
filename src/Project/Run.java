@@ -12,6 +12,7 @@ import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 class Run {
@@ -33,10 +34,19 @@ class Run {
 						new FileOutputStream("C:\\Users\\Public\\Documents\\File.txt"));
 				ObjectInputStream input = new ObjectInputStream(
 						new FileInputStream("C:\\Users\\Public\\Documents\\File.txt"))) {
+			System.out.println("1. EN");
+			System.out.println("2. RU\n");
+			int loc = scan.nextInt();
+			if (loc == 1) {
+				Locale.getDefault();
+			}
+			if (loc == 2) {
+				Locale.setDefault(new Locale("ru", "RU"));
+			}
 			while (inspection) {
-				System.out.println("1. Show all park's cars:");
-				System.out.println("2. Operations:");
-				System.out.println("3. Exit\n");
+				System.out.println(Messages.getString("Run.11"));
+				System.out.println(Messages.getString("Run.12"));
+				System.out.println(Messages.getString("Run.13"));
 				int num = scan.nextInt();
 				switch (num) {
 				case 1:
@@ -46,12 +56,12 @@ class Run {
 					System.out.println("\n");
 					break;
 				case 2:
-					System.out.println("\n1. Show the total cost of cars:");
-					System.out.println("2. Sort by fuel consumption:");
-					System.out.println("3. Find car by acceleration range:");
-					System.out.println("4. Write a file:");
-					System.out.println("5. Read from file:");
-					System.out.println("6. Exit\n");
+					System.out.println(Messages.getString("Run.17"));
+					System.out.println(Messages.getString("Run.18"));
+					System.out.println(Messages.getString("Run.19"));
+					System.out.println(Messages.getString("Run.20"));
+					System.out.println(Messages.getString("Run.21"));
+					System.out.println(Messages.getString("Run.22"));
 					int secondNum = scan.nextInt();
 					if (secondNum == 1) {
 						Iterator<Car> itr = taxiPark.iterator();
@@ -71,29 +81,29 @@ class Run {
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
-							System.out.println("\n" + each.getCarName() + "\nFuel consumprion: "
+							System.out.println("\n" + each.getCarName() + Messages.getString("Run.27")
 									+ each.getFuelConsumption() + "\n");
 						}
 					}
 					if (secondNum == 3) {
-						System.out.print("\nEnter range:\n\n");
+						System.out.print(Messages.getString("Run.29"));
 						double firstRange = scan.nextDouble();
 						double secondRange = scan.nextDouble();
 						Iterator<Car> itr = taxiPark.iterator();
 						while (itr.hasNext()) {
 							each = itr.next();
 							if (each.getAcceleration() >= firstRange && each.getAcceleration() <= secondRange) {
-								System.out.println(
-										"\n" + each.getCarName() + "\nAcceleration: " + each.getAcceleration() + "\n");
+								System.out.println("\n" + each.getCarName() + Messages.getString("Run.31")
+										+ each.getAcceleration() + "\n");
 							}
 						}
 						if (each.getAcceleration() < firstRange || secondRange < 4.5) {
-							System.out.println("\nWe haven't got cars for you\n");
+							System.out.println(Messages.getString("Run.33"));
 						}
 					}
 					if (secondNum == 4) {
 						output.writeObject(taxiPark);
-						System.out.println("\nDone!\n");
+						System.out.println(Messages.getString("Run.34"));
 					}
 					if (secondNum == 5) {
 						Object file_1 = input.readObject();
@@ -101,28 +111,28 @@ class Run {
 					}
 					if (secondNum == 6) {
 						inspection = false;
-						System.out.println("\nProgramm closed.");
+						System.out.println(Messages.getString("Run.37"));
 					}
 					if (secondNum > 6) {
-						System.out.println("\nHaven't got variants, please try again\n");
+						System.out.println(Messages.getString("Run.38"));
 					}
 					break;
 				case 3:
 					inspection = false;
-					System.out.println("\nProgramm closed.");
+					System.out.println(Messages.getString("Run.39"));
 					break;
 				default:
-					System.out.println("\nWe haven't got variants, please try again\n");
+					System.out.println(Messages.getString("Run.38"));
 				}
 			}
 		} catch (InputMismatchException e) {
-			System.out.println("\nError - not a integer! Programm closed.");
+			System.out.println(Messages.getString("Run.41"));
 		} catch (FileNotFoundException e1) {
-			System.out.println("\nFile not found!\n");
+			System.out.println(Messages.getString("Run.42"));
 		} catch (IOException e1) {
-			System.out.println("\nInput/Output error!\n");
+			System.out.println(Messages.getString("Run.43"));
 		} catch (ClassNotFoundException e1) {
-			System.out.println("\nClass not found!\n");
+			System.out.println(Messages.getString("Run.44"));
 		}
 	}
 }

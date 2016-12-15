@@ -99,8 +99,8 @@ public class Car implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return carName + "\nCar price: " + price + "$" + "\nAcceleration: " + acceleration + "\nFuel consumption: "
-				+ fuelConsumption;
+		return carName + Messages.getString("Car.0") + price + "$" + Messages.getString("Car.2") + acceleration
+				+ Messages.getString("Car.3") + fuelConsumption;
 	}
 
 }

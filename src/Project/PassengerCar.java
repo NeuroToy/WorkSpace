@@ -20,6 +20,6 @@ public class PassengerCar extends Car {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nEngine: " + engine;
+		return super.toString() + Messages.getString("PassengerCar.0") + engine;
 	}
 }

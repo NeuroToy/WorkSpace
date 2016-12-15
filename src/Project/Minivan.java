@@ -20,6 +20,6 @@ public class Minivan extends Suv {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\nBaby chair: " + babyChair;
+		return super.toString() + Messages.getString("Minivan.0") + babyChair;
 	}
 }
