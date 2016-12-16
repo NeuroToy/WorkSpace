@@ -8,11 +8,11 @@
 			<size>17</size>
 		</visualParameters>
 		<growingTips>
-			<temperature value="17">
-				<unit>degrees</unit>
+			<temperature unit="degrees">
+				<value>17</value>
 			</temperature>
-			<watering value="600">
-				<unit>ml per week</unit>
+			<watering unit="ml per week">
+				<value>600</value>
 			</watering>
 		</growingTips>
 		<multiplying>
@@ -27,11 +27,11 @@
 			<size>300</size>
 		</visualParameters>
 		<growingTips>
-			<temperature value="12">
-				<unit>degrees</unit>
+			<temperature unit="degrees">
+				<value>12</value>
 			</temperature>
-			<watering value="1200">
-				<unit>ml per week</unit>
+			<watering unit="ml per weel">
+				<value>1200</value>
 			</watering>
 		</growingTips>
 		<multiplying>

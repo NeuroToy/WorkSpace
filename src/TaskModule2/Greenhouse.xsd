@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	<xs:attribute name="color" type="xs:string" />
-	<xs:attribute name="value" type="xs:integer" />
-	<xs:group name="description">
+	<xs:attribute name="unit" type="xs:string" />
+	<xs:group name="set">
 		<xs:sequence>
-			<xs:element name="unit" type="xs:string" />
+			<xs:element name="value" type="xs:integer" />
 		</xs:sequence>
 	</xs:group>
 	<xs:element name="greenhouse">
@@ -44,14 +44,14 @@
 									<xs:sequence>
 										<xs:element name="temperature">
 											<xs:complexType>
-												<xs:group ref="description" />
-												<xs:attribute ref="value" />
+												<xs:group ref="set" />
+												<xs:attribute ref="unit" />
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="watering">
 											<xs:complexType>
-												<xs:group ref="description" />
-												<xs:attribute ref="value" />
+												<xs:group ref="set" />
+												<xs:attribute ref="unit" />
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
