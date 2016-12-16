@@ -30,7 +30,7 @@
 			<temperature unit="degrees">
 				<value>12</value>
 			</temperature>
-			<watering unit="ml per weel">
+			<watering unit="ml per week">
 				<value>1200</value>
 			</watering>
 		</growingTips>
