@@ -1,49 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:attributeGroup name="plantInfo">
-		<xs:attribute name="name" type="xs:string" />
-		<xs:attribute name="soil" type="xs:string" />
-		<xs:attribute name="origin" type="xs:string" />
-	</xs:attributeGroup>
-	<xs:attribute name="unit" type="xs:string" />
+	<xs:attribute name="color" type="xs:string" />
+	<xs:attribute name="value" type="xs:integer" />
+	<xs:group name="description">
+		<xs:sequence>
+			<xs:element name="unit" type="xs:string" />
+		</xs:sequence>
+	</xs:group>
 	<xs:element name="greenhouse">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="plant" maxOccurs="5">
 					<xs:complexType>
 						<xs:sequence>
+							<xs:element name="name" type="xs:string" />
+							<xs:element name="soil">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="podzolic" />
+										<xs:enumeration value="sod-podzolic" />
+										<xs:enumeration value="dirt" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="origin" type="xs:string" />
 							<xs:element name="visualParameters">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="color" type="xs:string" />
+										<xs:element name="size">
+											<xs:simpleType>
+												<xs:restriction base="xs:integer">
+													<xs:minInclusive value="0" />
+													<xs:maxInclusive value="1000" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 									</xs:sequence>
+									<xs:attribute ref="color" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="growingTips">
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="temperature">
-											<xs:simpleType>
-												<xs:restriction base="xs:integer">
-													<xs:minInclusive value="0" />
-													<xs:maxInclusive value="40" />
-												</xs:restriction>
-											</xs:simpleType>
+											<xs:complexType>
+												<xs:group ref="description" />
+												<xs:attribute ref="value" />
+											</xs:complexType>
 										</xs:element>
-										<xs:element name="watering" />
+										<xs:element name="watering">
+											<xs:complexType>
+												<xs:group ref="description" />
+												<xs:attribute ref="value" />
+											</xs:complexType>
+										</xs:element>
 									</xs:sequence>
-
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="multiplying">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="reproduction" type="xs:string" />
+										<xs:element name="reproduction">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="stalk" />
+													<xs:enumeration value="seed" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
-						<xs:attributeGroup ref="plantInfo"></xs:attributeGroup>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>

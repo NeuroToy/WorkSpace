@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Пересмотреть струтуру! -->
 <greenhouse>
-	<plant name="poppy" soil="black earth" origin="NL">
-		<visualParameters>
-			<color>red</color>
+	<plant>
+		<name>poppy</name>
+		<soil>podzolic</soil>
+		<origin>NL</origin>
+		<visualParameters color="red">
+			<size>17</size>
 		</visualParameters>
 		<growingTips>
-			<temperature unit="degrees">17</temperature>
-			<watering>600</watering>
+			<temperature value="17">
+				<unit>degrees</unit>
+			</temperature>
+			<watering value="600">
+				<unit>ml per week</unit>
+			</watering>
 		</growingTips>
 		<multiplying>
 			<reproduction>seed</reproduction>
 		</multiplying>
 	</plant>
-	<plant name="maple" soil="garden" origin="CA">
-		<visualParameters>
-			<color>green</color>
+	<plant>
+		<name>maple</name>
+		<soil>sod-podzolic</soil>
+		<origin>CA</origin>
+		<visualParameters color="green">
+			<size>300</size>
 		</visualParameters>
 		<growingTips>
-			<temperature unit="degrees">12</temperature>
-			<watering>1200</watering>
+			<temperature value="12">
+				<unit>degrees</unit>
+			</temperature>
+			<watering value="1200">
+				<unit>ml per week</unit>
+			</watering>
 		</growingTips>
 		<multiplying>
 			<reproduction>stalk</reproduction>
