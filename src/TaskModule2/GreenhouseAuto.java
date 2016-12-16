@@ -130,10 +130,10 @@ import javax.xml.bind.annotation.XmlType;
     "plant"
 })
 @XmlRootElement(name = "greenhouse")
-public class Greenhouse {
+public class GreenhouseAuto {
 
     @XmlElement(required = true)
-    protected List<Greenhouse.Plant> plant;
+    protected List<GreenhouseAuto.Plant> plant;
 
     /**
      * Gets the value of the plant property.
@@ -153,13 +153,13 @@ public class Greenhouse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Greenhouse.Plant }
+     * {@link GreenhouseAuto.Plant }
      * 
      * 
      */
-    public List<Greenhouse.Plant> getPlant() {
+    public List<GreenhouseAuto.Plant> getPlant() {
         if (plant == null) {
-            plant = new ArrayList<Greenhouse.Plant>();
+            plant = new ArrayList<GreenhouseAuto.Plant>();
         }
         return this.plant;
     }
@@ -279,11 +279,11 @@ public class Greenhouse {
         @XmlElement(required = true)
         protected String origin;
         @XmlElement(required = true)
-        protected Greenhouse.Plant.VisualParameters visualParameters;
+        protected GreenhouseAuto.Plant.VisualParameters visualParameters;
         @XmlElement(required = true)
-        protected Greenhouse.Plant.GrowingTips growingTips;
+        protected GreenhouseAuto.Plant.GrowingTips growingTips;
         @XmlElement(required = true)
-        protected Greenhouse.Plant.Multiplying multiplying;
+        protected GreenhouseAuto.Plant.Multiplying multiplying;
 
         /**
          * Gets the value of the name property.
@@ -362,10 +362,10 @@ public class Greenhouse {
          * 
          * @return
          *     possible object is
-         *     {@link Greenhouse.Plant.VisualParameters }
+         *     {@link GreenhouseAuto.Plant.VisualParameters }
          *     
          */
-        public Greenhouse.Plant.VisualParameters getVisualParameters() {
+        public GreenhouseAuto.Plant.VisualParameters getVisualParameters() {
             return visualParameters;
         }
 
@@ -374,10 +374,10 @@ public class Greenhouse {
          * 
          * @param value
          *     allowed object is
-         *     {@link Greenhouse.Plant.VisualParameters }
+         *     {@link GreenhouseAuto.Plant.VisualParameters }
          *     
          */
-        public void setVisualParameters(Greenhouse.Plant.VisualParameters value) {
+        public void setVisualParameters(GreenhouseAuto.Plant.VisualParameters value) {
             this.visualParameters = value;
         }
 
@@ -386,10 +386,10 @@ public class Greenhouse {
          * 
          * @return
          *     possible object is
-         *     {@link Greenhouse.Plant.GrowingTips }
+         *     {@link GreenhouseAuto.Plant.GrowingTips }
          *     
          */
-        public Greenhouse.Plant.GrowingTips getGrowingTips() {
+        public GreenhouseAuto.Plant.GrowingTips getGrowingTips() {
             return growingTips;
         }
 
@@ -398,10 +398,10 @@ public class Greenhouse {
          * 
          * @param value
          *     allowed object is
-         *     {@link Greenhouse.Plant.GrowingTips }
+         *     {@link GreenhouseAuto.Plant.GrowingTips }
          *     
          */
-        public void setGrowingTips(Greenhouse.Plant.GrowingTips value) {
+        public void setGrowingTips(GreenhouseAuto.Plant.GrowingTips value) {
             this.growingTips = value;
         }
 
@@ -410,10 +410,10 @@ public class Greenhouse {
          * 
          * @return
          *     possible object is
-         *     {@link Greenhouse.Plant.Multiplying }
+         *     {@link GreenhouseAuto.Plant.Multiplying }
          *     
          */
-        public Greenhouse.Plant.Multiplying getMultiplying() {
+        public GreenhouseAuto.Plant.Multiplying getMultiplying() {
             return multiplying;
         }
 
@@ -422,10 +422,10 @@ public class Greenhouse {
          * 
          * @param value
          *     allowed object is
-         *     {@link Greenhouse.Plant.Multiplying }
+         *     {@link GreenhouseAuto.Plant.Multiplying }
          *     
          */
-        public void setMultiplying(Greenhouse.Plant.Multiplying value) {
+        public void setMultiplying(GreenhouseAuto.Plant.Multiplying value) {
             this.multiplying = value;
         }
 
@@ -476,19 +476,19 @@ public class Greenhouse {
         public static class GrowingTips {
 
             @XmlElement(required = true)
-            protected Greenhouse.Plant.GrowingTips.Temperature temperature;
+            protected GreenhouseAuto.Plant.GrowingTips.Temperature temperature;
             @XmlElement(required = true)
-            protected Greenhouse.Plant.GrowingTips.Watering watering;
+            protected GreenhouseAuto.Plant.GrowingTips.Watering watering;
 
             /**
              * Gets the value of the temperature property.
              * 
              * @return
              *     possible object is
-             *     {@link Greenhouse.Plant.GrowingTips.Temperature }
+             *     {@link GreenhouseAuto.Plant.GrowingTips.Temperature }
              *     
              */
-            public Greenhouse.Plant.GrowingTips.Temperature getTemperature() {
+            public GreenhouseAuto.Plant.GrowingTips.Temperature getTemperature() {
                 return temperature;
             }
 
@@ -497,10 +497,10 @@ public class Greenhouse {
              * 
              * @param value
              *     allowed object is
-             *     {@link Greenhouse.Plant.GrowingTips.Temperature }
+             *     {@link GreenhouseAuto.Plant.GrowingTips.Temperature }
              *     
              */
-            public void setTemperature(Greenhouse.Plant.GrowingTips.Temperature value) {
+            public void setTemperature(GreenhouseAuto.Plant.GrowingTips.Temperature value) {
                 this.temperature = value;
             }
 
@@ -509,10 +509,10 @@ public class Greenhouse {
              * 
              * @return
              *     possible object is
-             *     {@link Greenhouse.Plant.GrowingTips.Watering }
+             *     {@link GreenhouseAuto.Plant.GrowingTips.Watering }
              *     
              */
-            public Greenhouse.Plant.GrowingTips.Watering getWatering() {
+            public GreenhouseAuto.Plant.GrowingTips.Watering getWatering() {
                 return watering;
             }
 
@@ -521,10 +521,10 @@ public class Greenhouse {
              * 
              * @param value
              *     allowed object is
-             *     {@link Greenhouse.Plant.GrowingTips.Watering }
+             *     {@link GreenhouseAuto.Plant.GrowingTips.Watering }
              *     
              */
-            public void setWatering(Greenhouse.Plant.GrowingTips.Watering value) {
+            public void setWatering(GreenhouseAuto.Plant.GrowingTips.Watering value) {
                 this.watering = value;
             }
 
