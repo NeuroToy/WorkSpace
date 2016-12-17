@@ -6,9 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "reproduction"
-})
+@XmlType(name = "", propOrder = { "reproduction" })
 public class Multiplying {
 
 	@XmlElement(required = true)
@@ -21,11 +19,16 @@ public class Multiplying {
 	public void setReproduction(String reproduction) {
 		this.reproduction = reproduction;
 	}
-	
-	public Multiplying(){
+
+	public Multiplying() {
 	}
 
-	public Multiplying(String reproduction){
+	public Multiplying(String reproduction) {
 		this.reproduction = reproduction;
+	}
+
+	@Override
+	public String toString() {
+		return "\n\t<reproduction = " + reproduction + "/>";
 	}
 }

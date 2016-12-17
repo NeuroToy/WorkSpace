@@ -10,24 +10,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "plant"
-})
+@XmlType(name = "", propOrder = { "plant" })
 @XmlRootElement(name = "greenhouse")
 public class Greenhouse {
 
 	@XmlElement(required = true)
-    private List<Plant> plant;
+	private List<Plant> plant;
 
-    public List<Plant> getPlant() {
-        if (plant == null) {
-            plant = new ArrayList<Plant>();
-        }
-        return this.plant;
-    }
+	public List<Plant> getPlant() {
+		if (plant == null) {
+			plant = new ArrayList<Plant>();
+		}
+		return this.plant;
+	}
 
 	@Override
 	public String toString() {
-		return "Greenhouse [plant=" + plant + "]";
+		return "Greenhouse:\n" + plant;
 	}
 }

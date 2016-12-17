@@ -6,14 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "name",
-    "soil",
-    "origin",
-    "visualParameters",
-    "growingTips",
-    "multiplying"
-})
+@XmlType(name = "", propOrder = { "name", "soil", "origin", "visualParameters", "growingTips", "multiplying" })
 public class Plant {
 
 	@XmlElement(required = true)
@@ -23,11 +16,11 @@ public class Plant {
 	@XmlElement(required = true)
 	private String origin;
 	@XmlElement(required = true)
-	private VisualParameters visualParameters = new VisualParameters();
+	private VisualParameters visualParameters;
 	@XmlElement(required = true)
-	private GrowingTips growingTips = new GrowingTips();
+	private GrowingTips growingTips;
 	@XmlElement(required = true)
-	private Multiplying multiplying = new Multiplying();
+	private Multiplying multiplying;
 
 	public VisualParameters getVisualParameters() {
 		return visualParameters;
@@ -77,22 +70,9 @@ public class Plant {
 		this.origin = origin;
 	}
 
-	public Plant() {
-	}
-
-	public Plant(String name, String soil, String origin, VisualParameters visualParameters, GrowingTips growingTips,
-			Multiplying multiplying) {
-		this.name = name;
-		this.origin = origin;
-		this.soil = soil;
-		this.visualParameters = visualParameters;
-		this.growingTips = growingTips;
-		this.multiplying = multiplying;
-	}
-	
 	@Override
 	public String toString() {
-		return "Plant [name=" + name + ", soil=" + soil + ", origin=" + origin + ", visualParameters="
-				+ visualParameters + ", growingTips=" + growingTips + ", multiplying=" + multiplying + "]";
+		return "\n<Plant\n<name = " + name + "/>\n<soil = " + soil + "/>\n<origin = " + origin + "/>\n<visualparameters:"
+				+ visualParameters + "/>\n<growingtips:" + growingTips + "/>\n<multiplying:" + multiplying + "/>\n/>";
 	}
 }

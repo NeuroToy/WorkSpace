@@ -30,4 +30,9 @@ public class Temperature {
 	public void setValue(int value) {
 		this.value = value;
 	}
+
+	@Override
+	public String toString() {
+		return "\n\t\t<unit = " + unit + "/><value = " + value + "/>";
+	}
 }

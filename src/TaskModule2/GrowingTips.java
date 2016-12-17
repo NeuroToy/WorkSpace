@@ -6,16 +6,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "temperature",
-    "watering"
-})
+@XmlType(name = "", propOrder = { "temperature", "watering" })
 public class GrowingTips {
 
 	@XmlElement(required = true)
-	private Temperature temperature = new Temperature();
+	private Temperature temperature;
 	@XmlElement(required = true)
-	private Watering watering = new Watering();
+	private Watering watering;
 
 	public Temperature getTemperature() {
 		return temperature;
@@ -33,11 +30,8 @@ public class GrowingTips {
 		this.watering = watering;
 	}
 
-	public GrowingTips() {
-	}
-
-	public GrowingTips(Temperature temperature, Watering watering) {
-		this.temperature = temperature;
-		this.watering = watering;
+	@Override
+	public String toString() {
+		return "\n\t<temperature:" + temperature + "\n\t<watering:" + watering + "/>";
 	}
 }
