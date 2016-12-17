@@ -29,6 +29,6 @@ public class Multiplying {
 
 	@Override
 	public String toString() {
-		return "\n\t<reproduction = " + reproduction + "/>";
+		return "\n\treproduction = " + reproduction;
 	}
 }

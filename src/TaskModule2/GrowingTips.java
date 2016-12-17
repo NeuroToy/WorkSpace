@@ -32,6 +32,6 @@ public class GrowingTips {
 
 	@Override
 	public String toString() {
-		return "\n\t<temperature:" + temperature + "\n\t<watering:" + watering + "/>";
+		return "\n\ttemperature:" + temperature + "\n\twatering:" + watering;
 	}
 }

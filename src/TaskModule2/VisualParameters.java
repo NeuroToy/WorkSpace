@@ -33,6 +33,6 @@ public class VisualParameters {
 
 	@Override
 	public String toString() {
-		return "\n\t<size = " + size + "/><color = " + color + "/>";
+		return "\n\tcolor = " + color + "\n\tsize = " + size;
 	}
 }

@@ -33,6 +33,6 @@ public class Watering {
 
 	@Override
 	public String toString() {
-		return "\n\t\t<unit = " + unit + "/><value = " + value + "/>";
+		return "\n\t\tunit = " + unit + "\n\t\tvalue = " + value;
 	}
 }
