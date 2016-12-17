@@ -72,7 +72,7 @@ public class Plant {
 
 	@Override
 	public String toString() {
-		return "\nPlant:\nname = " + name + "\nsoil = " + soil + "\norigin = " + origin + "\nvisualparameters:"
-				+ visualParameters + "\ngrowingtips:" + growingTips + "\nmultiplying:" + multiplying + "\n";
+		return "\nPlant:\n  name = " + name + "\n  soil = " + soil + "\n  origin = " + origin + "\n  visualparameters:"
+				+ visualParameters + "\n  growingtips:" + growingTips + "\n  multiplying:" + multiplying + "\n";
 	}
 }
