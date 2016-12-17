@@ -1,31 +1,33 @@
 package TaskModule2;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = { "value" })
 public class Temperature {
 
-	private String value;
-	private int size;
+	@XmlAttribute(name = "unit")
+	private String unit;
+	@XmlElement(required = true)
+	private int value;
 
-	public String getValue() {
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+	public int getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(int value) {
 		this.value = value;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public Temperature() {
-	}
-
-	public Temperature(String value, int size) {
-		this.value = value;
-		this.size = size;
 	}
 }

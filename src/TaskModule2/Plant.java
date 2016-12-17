@@ -1,12 +1,32 @@
 package TaskModule2;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "name",
+    "soil",
+    "origin",
+    "visualParameters",
+    "growingTips",
+    "multiplying"
+})
 public class Plant {
 
+	@XmlElement(required = true)
 	private String name;
+	@XmlElement(required = true)
 	private String soil;
+	@XmlElement(required = true)
 	private String origin;
+	@XmlElement(required = true)
 	private VisualParameters visualParameters = new VisualParameters();
+	@XmlElement(required = true)
 	private GrowingTips growingTips = new GrowingTips();
+	@XmlElement(required = true)
 	private Multiplying multiplying = new Multiplying();
 
 	public VisualParameters getVisualParameters() {
@@ -70,7 +90,9 @@ public class Plant {
 		this.multiplying = multiplying;
 	}
 	
+	@Override
 	public String toString() {
-		return name ;
+		return "Plant [name=" + name + ", soil=" + soil + ", origin=" + origin + ", visualParameters="
+				+ visualParameters + ", growingTips=" + growingTips + ", multiplying=" + multiplying + "]";
 	}
 }
