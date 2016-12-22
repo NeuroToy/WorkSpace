@@ -1,4 +1,4 @@
-package Thread;
+package Lesson14;
 
 public class ThreadMain {
 
