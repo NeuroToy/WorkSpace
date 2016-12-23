@@ -1,6 +1,6 @@
 package Project;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -9,13 +9,13 @@ public class Operations {
 
 	private static Car each = null;
 
-	public static void showAll(ArrayList<Car> taxiPark) {
+	public static void showAll(List<Car> taxiPark) {
 		for (Car x : taxiPark) {
 			System.out.print("\n" + x + "\n");
 		}
 	}
 
-	public static void showPrice(ArrayList<Car> taxiPark) {
+	public static void showPrice(List<Car> taxiPark) {
 		Iterator<Car> itr = taxiPark.iterator();
 		int costOfPark = 0;
 		while (itr.hasNext()) {
@@ -24,8 +24,8 @@ public class Operations {
 		}
 		System.out.println("\n" + costOfPark + "$" + "\n");
 	}
-
-	public static void sortByFuel(ArrayList<Car> taxiPark) {
+	
+	public static void sortByFuel(List<Car> taxiPark) {
 		Collections.sort(taxiPark, new Comparator<Car>() {
 			public int compare(Car a, Car b) {
 				return a.getFuelConsumption().compareTo(b.getFuelConsumption());
@@ -39,7 +39,7 @@ public class Operations {
 		}
 	}
 
-	public static void sortByAcceleration(ArrayList<Car> taxiPark, double firstRange, double secondRange) {
+	public static void sortByAcceleration(List<Car> taxiPark, double firstRange, double secondRange) {
 		Iterator<Car> itr = taxiPark.iterator();
 		while (itr.hasNext()) {
 			each = itr.next();
